@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List {% block title %}{% endblock %}</title>
+</head>
+<body>
+<header>
+    {% if not user.is_anonymous %}
+        Hi, {{ user }}! <a href="{% url django.contrib.auth.views.logout %}">logout</a>
+    {% endif %}
+</header>
+{% block content %}{% endblock %}
+</body>
+</html>
